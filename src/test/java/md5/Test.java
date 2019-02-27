@@ -33,6 +33,8 @@ public class Test {
         char[] chars = str.toCharArray();
         System.out.println(Arrays.toString(chars));
 
+        System.out.println();
+
         String md5Password = "e2d2982eae6824e7957af4297179a7a6";
 
 /*        File file = new File("D:/9.txt");
