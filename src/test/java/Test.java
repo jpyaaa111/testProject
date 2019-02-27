@@ -60,6 +60,7 @@ public class Test {
 
 
     public static void main(String[] args) throws Exception{
+        
         String queryDate ="190201";
         SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
         String tableName = transferTableName(sdf.parse(queryDate));
