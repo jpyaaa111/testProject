@@ -60,10 +60,15 @@ public class Test {
 
 
     public static void main(String[] args) throws Exception{
-        // 测试主干提交代码
+        // 测试主干提交代码...
         String queryDate ="190201";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyM");
         String tableName = transferTableName(sdf.parse(queryDate));
         System.out.println(tableName);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        Date date = calendar.getTime();
+        System.out.println(sdf.format(date));
     }
 }
