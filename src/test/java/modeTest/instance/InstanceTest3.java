@@ -14,13 +14,13 @@ package modeTest.instance;
 public class InstanceTest3 {
 
     // 私有化静态变量, 加入volatile, 保证该变量的可见性 与 有序性
-    private static InstanceTest3 instance;
+    private volatile static InstanceTest3 instance;
 
     // 私有构造器
     private InstanceTest3() {
     }
 
-    // 公共静态方法, 获得对象
+    // 公共静态方法, 获得单例对象
     public static InstanceTest3 getInstance() {
         // 不为空不进同步块
         if (instance == null) {

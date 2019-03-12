@@ -1,6 +1,6 @@
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 
 /**
  * @author : JinPeiyao
@@ -10,6 +10,12 @@ import java.util.Date;
  * @date : 2019年02月02日 14:49
  */
 public class Test {
+
+    private static Properties props;
+
+    static {
+        props = System.getProperties();
+    }
 
     /**
      * 获得当前时间是上半年还是下半年
@@ -59,16 +65,22 @@ public class Test {
     }
 
 
-    public static void main(String[] args) throws Exception{
-        // 测试主干提交代码...
-        String queryDate ="190201";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyM");
-        String tableName = transferTableName(sdf.parse(queryDate));
-        System.out.println(tableName);
+    public static void main(String[] args) throws IOException {
+/*        Properties properties = getPropertie("test.properties");
+        System.out.println(properties.get("loginName"));*/
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        Date date = calendar.getTime();
-        System.out.println(sdf.format(date));
+        ResourceBundle resource = ResourceBundle.getBundle("test");
+        System.out.println(resource.getString("loginName") + ", " + resource.getString("moblie"));
+    }
+
+    private static Properties getPropertie(String filePath) throws IOException {
+        Properties properties = new Properties();
+
+        System.out.println(Objects.requireNonNull(Test.class.getClassLoader().getResource("")).getPath());
+
+        InputStream in = Test.class.getClassLoader().getResourceAsStream(filePath);
+        properties.load(in);
+
+        return properties;
     }
 }

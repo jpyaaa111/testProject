@@ -28,7 +28,8 @@ public class Test {
                         e.printStackTrace();
                     }
 
-                    System.out.println(InstanceTest3.getInstance());
+                    System.out.println(InstanceTest6.INSTANCE);
+                    InstanceTest6.INSTANCE.testMethod();
 
                     latch.countDown();// 让latch中的数值减一
                 }
