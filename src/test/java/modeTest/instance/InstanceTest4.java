@@ -11,6 +11,7 @@ package modeTest.instance;
  * @Description : 优化版双重检测单例
  * @date : 2019年02月01日 11:26
  */
+@SuppressWarnings("unused")
 public class InstanceTest4 {
 
     // 私有静态最终的局部线程变量

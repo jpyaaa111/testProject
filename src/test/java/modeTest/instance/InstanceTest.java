@@ -10,6 +10,7 @@ package modeTest.instance;
  * @Description : 饿汉单例
  * @date : 2019-1-31 15:03:37
  */
+@SuppressWarnings("unused")
 public class InstanceTest {
 
     // 饿汉, 加载类时, 直接新建单例

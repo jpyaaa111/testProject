@@ -10,6 +10,7 @@ package modeTest.instance;
  * @Description : 饿汉模式
  * @date : 2019-1-31 15:15:18
  */
+@SuppressWarnings("unused")
 public class InstanceTest2 {
 
     // 私有静态变量, 先不复制

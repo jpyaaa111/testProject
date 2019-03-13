@@ -11,6 +11,7 @@ import java.io.Serializable;
  * @Description : 优化双重锁校验单例
  * @date : 2019年03月12日 16:44
  */
+@SuppressWarnings("unused")
 public class InstanceTest7 implements Serializable  {
 
     // 私有化静态变量, 加入volatile, 保证该变量的可见性 与 有序性

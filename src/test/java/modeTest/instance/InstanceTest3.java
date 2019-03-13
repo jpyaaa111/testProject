@@ -11,6 +11,7 @@ package modeTest.instance;
  * @Description : 双重校验单例模式
  * @date : 2019-1-31 15:31:28
  */
+@SuppressWarnings("unused")
 public class InstanceTest3 {
 
     // 私有化静态变量, 加入volatile, 保证该变量的可见性 与 有序性

@@ -11,6 +11,7 @@ package modeTest.instance;
  * @Description : 枚举类的单例模式
  * @date : 2019-3-12 16:26:05
  */
+@SuppressWarnings("unused")
 public enum InstanceTest6 {
 
     // 代表了这个枚举类对象, 枚举类特性会生成一个私有的构造方法, 直接形成的单例

@@ -11,6 +11,7 @@ package modeTest.instance;
  * @Description : 内部类的单例模式
  * @date : 2019-1-31 17:08:22
  */
+@SuppressWarnings("unused")
 public class InstanceTest5 {
 
     private InstanceTest5() {
