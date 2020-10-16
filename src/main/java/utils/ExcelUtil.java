@@ -12,11 +12,10 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.IORuntimeException;
 import cn.hutool.poi.excel.BigExcelWriter;
-import cn.hutool.poi.excel.ExcelUtil;
 
-public class ExcelUtils {
+public class ExcelUtil {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ExcelUtils.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExcelUtil.class);
 
     /**
      * 用Hutool工具类获得报表对象
@@ -41,7 +40,7 @@ public class ExcelUtils {
             excelFile.delete();
         }
         // 开始生成报表
-        BigExcelWriter writer = ExcelUtil.getBigWriter(excelFile, reportTitle);
+        BigExcelWriter writer = cn.hutool.poi.excel.ExcelUtil.getBigWriter(excelFile, reportTitle);
         // --- 设置属性名对应的别名
         for (int i = 0; i < attrArr.length; i++) {
             writer.addHeaderAlias(attrArr[i], columnArr[i]);
