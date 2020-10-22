@@ -7,7 +7,6 @@ import java.util.Map;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ReflectUtil;
-import constant.TestEnum;
 
 /**
  * 枚举类的工具类, 封装了hutool工具类, 包装为了业务逻辑需求的封装类
@@ -55,9 +54,5 @@ public class EnumUtil {
         }
 
         return enumList;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(getEnumFieldList(TestEnum.class));
     }
 }
