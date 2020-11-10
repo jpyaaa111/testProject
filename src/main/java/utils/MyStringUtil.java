@@ -1,5 +1,7 @@
 package utils;
 
+import cn.hutool.core.util.StrUtil;
+
 /**
  * 字符串相关的工具类, 与以往不同, 一般的通用统一用hutool包的StrUtil, 此处的工具类是一些业务逻辑上需要用到的字符串相关的工具类
  * @author : JinPeiyao
@@ -32,5 +34,54 @@ public class MyStringUtil {
         }
         // 最终将号段和尾数连接起来
         return firstNum + lastNum;
+    }
+
+    /**
+     * 字符串脱敏<br>
+     * 使用本方法时, 需要注意一下几点 : <br>
+     * <li>原数据为空时, 返回null;</li>
+     * <li>原数据的长度, 如果小于需要保留的首位长度 + 末位长度, 那么直接返回原数据;</li>
+     * <li>首位与末位需要保留的位数都没有 或者 中间需要脱敏的位数没有, 则没必要脱敏, 返回原数据;</li>
+     * @Title desensitize
+     * @Description
+     * @author JinPeiyao
+     * @param value 原数据字符串
+     * @param firstNum 需要保留的首位位数
+     * @param asteriskNum 中间脱敏的位数
+     * @param lastNum 需要保留的末位位数
+     * @date 2020/11/10 14:38
+     * @return java.lang.String 最后脱敏的字符串
+     */
+    public static String desensitize(String value, int firstNum, int asteriskNum, int lastNum) {
+        // 原数据为空, 则直接返回null
+        if (StrUtil.isEmpty(value)) {
+            return null;
+        }
+        // 原数据的长度, 如果小于需要保留的首位长度 + 末位长度, 那么直接返回原数据
+        if (value.length() < firstNum + lastNum) {
+            return value;
+        }
+        // 判断, 如果首位与末位需要保留的位数都没有 或者 中间需要脱敏的位数没有, 则没必要脱敏, 返回原数据
+        boolean numFlag = (firstNum <= 0 && lastNum <= 0) || asteriskNum <= 0;
+        if (numFlag) {
+            return value;
+        }
+
+        StringBuilder resultValue = new StringBuilder();
+        // 拼接首位
+        resultValue.append(value, 0, firstNum);
+        // 拼接脱敏星号
+        for (int i = 0; i < asteriskNum; i++) {
+            resultValue.append("*");
+        }
+        // 拼接后缀
+        resultValue.append(value.substring(value.length() - lastNum));
+
+        return resultValue.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getPhoneNum());
+        System.out.println(desensitize("310110199208043213", 6, 8, 4));
     }
 }
