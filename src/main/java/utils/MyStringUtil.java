@@ -82,6 +82,6 @@ public class MyStringUtil {
 
     public static void main(String[] args) {
         System.out.println(getPhoneNum());
-        System.out.println(desensitize("310110199208043213", 6, 8, 4));
+//        System.out.println(desensitize("310110199208043213", 6, 8, 4));
     }
 }
