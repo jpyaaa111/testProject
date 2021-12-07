@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ReflectUtil;
 
@@ -45,7 +46,7 @@ public class EnumUtil {
         // 迭代封装
         Map<String, Object> map;
         for (Enum<?> anEnum : enumArr) {
-            map = CollUtil.newHashMap(enumFieldNameList.size());
+            map = MapUtil.newHashMap(enumFieldNameList.size());
             // 将所有的属性都封闭到Map中
             for (String name : enumFieldNameList) {
                 map.put(name, ReflectUtil.getFieldValue(anEnum, name));
