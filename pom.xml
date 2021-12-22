@@ -57,7 +57,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.7.16</version>
+            <version>5.7.17</version>
         </dependency>
         <!-- 阿里巴巴的JSON -->
         <dependency>
@@ -90,7 +90,6 @@
             <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
 </project>
